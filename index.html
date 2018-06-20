@@ -47,8 +47,7 @@
 
     <header class="bg-primary text-white">
       <div class="container text-center">
-        <h1>Welcome to Anthony Huff's Project</h1>
-        <p class="lead">A landing page template freshly redesigned for Bootstrap 4</p>
+        <h1>Welcome to Anthony Huff's Dev Test</h1>
       </div>
     </header>
 
@@ -57,33 +56,14 @@
         <div class="row">
           <div class="col-lg-8 mx-auto">
             
-              <!--<h2>Weather Project</h2>-->
-              <!-- Buffalo  -->
-              <script>
+            <h2>Weather Project</h2>
 
-                /* Build URL for Buffalo call */
-
-                /*
-                Buffalo = api_url + api_key + "/" + Buflatitude + "," + Buflongitude;
-
-                $.getJSON(Buffalo, function(forecast) {
-                  var string = "";
-                  var name = ""
-                  var currentTemp = forecast.currently.apparentTemperature;
-                  string += currentTemp + "&#8457";
-                  document.querySelector("#BuffTemp").innerHTML = string;
-
-                  
-
-                });
-              */
-              </script>
             <!--    Buffalo Weather displays here   -->
             <div class="content-container">
               <div class="content">
                 
                 <!-- css overlay -->
-                <a class="overlay" href="https://google.com" target="_blank">
+                <a class="overlay" href="pages/buffalo_det.html" target="_blank">
                   <div class="content-overlay"></div>
                     <img class="content-image" src = "img/buffalo.jpg" >
                     <div class="content-details fadeIn-bottom">
@@ -92,9 +72,9 @@
                     </a>    
               </div>
               <!-- div with the id for the parameter that was passed in to find and replace the inner html-->
-              <p id="Buf"></p> 
+              <p class="Buf"></p> 
               <!-- main function call to API call in JS file -->              
-              <script>createCall("42.880230","-78.878738","Buffalo, NY","#Buf")</script>
+              <script>createCall("42.880230","-78.878738","Buffalo, NY",".Buf")</script>
             </div>
             
 
@@ -104,7 +84,7 @@
                   <div class="content">
                     
                     <!-- css overlay -->
-                    <a class="overlay" href="https://google.com" target="_blank">
+                    <a class="overlay" href="pages/la.html" target="_blank">
                       <div class="content-overlay"></div>
                         <img class="content-image" src = "img/LA.jpg" >
                         <div class="content-details fadeIn-bottom">
@@ -113,9 +93,29 @@
                         </a>    
                   </div>
                   <!-- div with the id for the parameter that was passed in to find and replace the inner html-->
-                  <p id="LA"></p>     
+                  <p class="LA"></p>     
                   <!-- main function call to API call in JS file -->        
-                  <script>createCall("34.052235","-118.243683","Los Angeles, CA","#LA")</script>
+                  <script>createCall("34.052235","-118.243683","Los Angeles, CA",".LA")</script>
+                </div>
+
+              
+              <!-- NYC Weather displays here -->
+              <div class="content-container">
+                  <div class="content">
+                    
+                    <!-- css overlay -->
+                    <a class="overlay" href="pages/nyc.html" target="_blank">
+                      <div class="content-overlay"></div>
+                        <img class="content-image" src = "img/nyc.jpg" >
+                        <div class="content-details fadeIn-bottom">
+                            <p class="content-text">Click for more information </p>
+                          </div>
+                        </a>    
+                  </div>
+                  <!-- div with the id for the parameter that was passed in to find and replace the inner html-->
+                  <p class="nyc"></p>     
+                  <!-- main function call to API call in JS file -->        
+                  <script>createCall("40.730610","-73.935242","New York City, NY",".nyc")</script>
                 </div>
 
                   
