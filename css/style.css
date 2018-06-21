@@ -1,4 +1,4 @@
-/* code is referenced from https://codepen.io/anon/pen/ZRraEG?editors=1100 for showing overlay over image link*/
+/* overlay code is referenced from https://codepen.io/anon/pen/ZRraEG?editors=1100 for showing overlay over image link*/
 
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 
@@ -32,7 +32,7 @@
 
 @media screen and (min-width: 900px){
   .content-container{
-    width: 33.33333%;
+    width: 35.33333%;
   }
 }
 
@@ -45,7 +45,7 @@
 .content {
   position: relative;
   width: 90%;
-  max-width: 400px;
+ /* max-width: 400px; */
   margin: auto;
   overflow: hidden;
 }
@@ -70,7 +70,7 @@
 }
 
 .content-image{
-  width: 300px;
+  width: 400px;
   height: 150px;
 }
 
@@ -147,7 +147,29 @@ tr:nth-child(even) td {
 tr:nth-child(odd) td {
   background-color: rgb(245,245,245);
 }
-
 caption {
   padding: 10px;
+}
+#refresh{
+  margin-top: 5px;
+  padding: 5px 20px;
+}
+.data {
+  width: 300px;
+}
+.content-container{
+  margin: 50px;
+}
+#back{
+    margin-top: 10px;
+    padding:5px 15px; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+#project{
+  padding-top: 75px;
+  padding-bottom: 20px;
 }

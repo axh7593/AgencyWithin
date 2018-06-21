@@ -83,11 +83,12 @@ function createExtended(latitude, longitude, cityName, divID){
                                     "<td>" + precipFixed + "%" + "</td>" + 
                                     "<td>" + humidPercentFixed + "%" + "</td>" +
                                     "<td>" + value.windSpeed + " mph" + "</td>"
-                                "</tr>" +
-                            "</tbody>" +
-                        "</table>";          
-            }  
+                                "</tr>";
+                                     
+            }      
         });
+        string += "</tbody>" +
+                        "</table>"; 
 
 
 
@@ -139,10 +140,15 @@ function createExtended(latitude, longitude, cityName, divID){
                                     "<td>" + precipFixed + "%" + "</td>" + 
                                     "<td>" + humidPercentFixed + "%" + "</td>" +
                                     "<td>" + value.windSpeed + " mph" + "</td>"
-                                "</tr>" +
-                                "</tbody>" +
-                            "</table>";    
+                                "</tr>";
+                                   
             });
+            dailyString += "</tbody>" +
+                             "</table>"; 
+
+            dailyString += "<form action='../index.html'>" +
+                                "<input type='submit' value='Back' id='back' />" +
+                            "</form>";
 
         //append above html to the selected divID parameter and change its inner html and be sure to add both created strings so both tables appear
         divID = document.querySelector(divID).innerHTML = string + dailyString;

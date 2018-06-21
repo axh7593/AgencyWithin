@@ -47,7 +47,8 @@
 
     <header class="bg-primary text-white">
       <div class="container text-center">
-        <h1>Welcome to Anthony Huff's Dev Test</h1>
+        <h1>Anthony Huff's Weather API Dev Test</h1>
+        <p> Using the Dark Sky Weather API</p>
       </div>
     </header>
 
@@ -59,11 +60,12 @@
             <h2>Weather Project</h2>
 
             <!-- Buffalo Weather displays here   -->
+            
             <div class="content-container">
               <div class="content">
                 
                 <!-- css overlay -->
-                <a class="overlay" href="pages/buffalo_det.html" target="_blank">
+                <a class="overlay" href="pages/buffalo_det.html">
                   <div class="content-overlay"></div>
                     <img class="content-image" src = "img/buffalo.jpg" >
                     <div class="content-details fadeIn-bottom">
@@ -72,10 +74,11 @@
                     </a>    
               </div>
               <!-- div with the id for the parameter that was passed in to find and replace the inner html-->
-              <p class="Buf"></p> 
+              <p class="Buf data"></p> 
               <!-- main function call to API call in JS file -->              
               <script>createCall("42.880230","-78.878738","Buffalo, NY",".Buf")</script>
             </div>
+          
             
 
 
@@ -84,7 +87,7 @@
                   <div class="content">
                     
                     <!-- css overlay -->
-                    <a class="overlay" href="pages/la.html" target="_blank">
+                    <a class="overlay" href="pages/la.html">
                       <div class="content-overlay"></div>
                         <img class="content-image" src = "img/LA.jpg" >
                         <div class="content-details fadeIn-bottom">
@@ -93,7 +96,7 @@
                         </a>    
                   </div>
                   <!-- div with the id for the parameter that was passed in to find and replace the inner html-->
-                  <p class="LA"></p>     
+                  <p class="LA data"></p>     
                   <!-- main function call to API call in JS file -->        
                   <script>createCall("34.052235","-118.243683","Los Angeles, CA",".LA")</script>
                 </div>
@@ -104,7 +107,7 @@
                   <div class="content">
                     
                     <!-- css overlay -->
-                    <a class="overlay" href="pages/nyc.html" target="_blank">
+                    <a class="overlay" href="pages/nyc.html">
                       <div class="content-overlay"></div>
                         <img class="content-image" src = "img/nyc.jpg" >
                         <div class="content-details fadeIn-bottom">
@@ -113,7 +116,7 @@
                         </a>    
                   </div>
                   <!-- div with the id for the parameter that was passed in to find and replace the inner html-->
-                  <p class="nyc"></p>     
+                  <p class="nyc data"></p>     
                   <!-- main function call to API call in JS file -->        
                   <script>createCall("40.730610","-73.935242","New York City, NY",".nyc")</script>
                 </div>
@@ -124,7 +127,7 @@
                 <div class="content">
                   
                   <!-- css overlay -->
-                  <a class="overlay" href="pages/chicago.html" target="_blank">
+                  <a class="overlay" href="pages/chicago.html">
                     <div class="content-overlay"></div>
                       <img class="content-image" src = "img/chicago.jpg" >
                       <div class="content-details fadeIn-bottom">
@@ -133,7 +136,7 @@
                       </a>    
                 </div>
                 <!-- div with the id for the parameter that was passed in to find and replace the inner html-->
-                <p class="chicago"></p>     
+                <p class="chicago data"></p>     
                 <!-- main function call to API call in JS file -->        
                 <script>createCall("41.881832","-87.623177","Chicago, IL",".chicago")</script>
               </div>
@@ -144,7 +147,7 @@
                 <div class="content">
                   
                   <!-- css overlay -->
-                  <a class="overlay" href="pages/seattle.html" target="_blank">
+                  <a class="overlay" href="pages/seattle.html">
                     <div class="content-overlay"></div>
                       <img class="content-image" src = "img/seattle.jpg" >
                       <div class="content-details fadeIn-bottom">
@@ -153,10 +156,11 @@
                       </a>    
                 </div>
                 <!-- div with the id for the parameter that was passed in to find and replace the inner html-->
-                <p class="seattle"></p>     
+                <p class="seattle data"></p>     
                 <!-- main function call to API call in JS file -->        
                 <script>createCall("47.608013","-122.335167","Seattle, WA",".seattle")</script>
               </div>
+           
 
                   
 
@@ -172,12 +176,18 @@
             <h2>About this Project</h2>
             <p class="lead">I began the project by finding a good bootstrap template to showcase the project on. I wanted something that was 
               not to much but still looked good in terms of design and ux/ui. I believe that using bootstrap for this project was a good idea because
-              that way I could focus more on implementation of features and have more time to find and understand an API. <br>
+              that way I could focus more on implementation of features and have more time to find and understand an API. <br><br>
               Speaking of the API, I began by trying to use the one suggested in the project documentation, openweathermap.org but found myself not liking it,
-              so I began in search of another API that would show weather and I landed upon using https://darksky.net/ which is another widely used weather API.<br>
+              so I began in search of another API that would show weather and I landed upon using https://darksky.net/ which is another widely used weather API.<br><br>
               I began to look at documentation and online resources on how to use the API and how to begin implementation. I began coding and after a couple hours
               relized that I would need to streamline the process of making the API calls as dark sky requires for each call a set of latitude and longitude coords everytime
-              a call is sent. So I created a function with several paramters (createCall) that would be used in my main HTML file to pass in the required info that I needed (this can be found in js/app.js)
+              a call is sent. So I created a function with several paramters (createCall) that would be used in my main HTML file to pass in the required info that I needed (this can be found in js/app.js)<br><br>
+              For the extended forecasts for each city I began by creating another JavaScript function for displaying the extended forecast for the cities by displaying hourly and daily
+              data for the city clicked. For the design of these I knew I had to figure out how to nicely display the data as there would be a lot of data coming in. I landed upon HTML tables as they
+              are simple and get the data seperated into a nice format that is clearly readable. <br><br>
+              One thing that I tried to do but had trouble implementing was using JQuery to dynamically display the extended forecast by using the JQuery function replaceWith() and 
+              replacing the div containing the cities and display the selected city's extended forecast, but ultimately decided to implement a back button and use multiple pages to display the extended
+              forecast. 
               
             </p>
           </div>
