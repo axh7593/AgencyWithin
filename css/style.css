@@ -162,4 +162,12 @@ td {
   padding: 6px;
   color: gray;
 }
+.forecast .dark-sky-widget .widget-container a{
+  pointer-events: none;
+  cursor: default;
+}
+a[href="https://darksky.net/forecast/42.8864,-78.8784/us12/en"]{
+  pointer-events: none;
+  cursor: default;
+}
 
