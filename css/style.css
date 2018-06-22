@@ -125,6 +125,11 @@ caption {
 .content-container{
   margin: 50px;
 }
+
+#logo{
+  max-height: 40px;
+  max-width: 40px;
+}
 /* back button styling */
 #back{
     margin-top: 10px;

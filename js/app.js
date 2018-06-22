@@ -11,10 +11,13 @@ function createCall(latitude, longitude, cityName, divID){
     $.getJSON(api_call, function(forecast) {
         var string = "";
         var city = cityName;
-        var currentTemp = forecast.currently.temperature;
+        // make temp a string 
+        var currentTemp = (forecast.currently.temperature).toString();
+        // make temp only show the first two numbers as to cut off the decimal as its not needed.
+        var currentTempFixed = currentTemp.substr(0,2);
         var summary = forecast.currently.summary;
         string = city + "<br>" +
-            "<strong>Current Temperature</strong>: " + currentTemp + "&#8457" + "<br>" + 
+            "<strong>Current Temperature</strong>: " + currentTempFixed + "&#8457" + "<br>" + 
             "<strong>Current Conditions</strong>: " + summary;
         divID = document.querySelector(divID).innerHTML = string;
       });
@@ -61,13 +64,20 @@ function createExtended(latitude, longitude, cityName, divID){
                 
                 //convert precipitation to a percentage instead of a decimal
                 var precipPercent = value.precipProbability * 100;
-                // prevent value from creating a run on number by fixing to number to one decimal point
-                var precipFixed = precipPercent.toFixed(1);
+                // prevent value from creating a run on number trunc'ing the decimal point 
+                var precipFixed = Math.trunc(precipPercent);
 
-                //convert humidity to a percentage instead of a decimal also convert to string so that 
-                // substring can run on the results to shorten the result to prevent a runon percentage
-                var humidPercent = (value.humidity * 100).toString();
-                var humidPercentFixed = humidPercent.substring(0,5);
+                //convert humidity to a percentage instead of a decimal             
+                // also prevent some other variables from producing decimals by trunc'ing the decimals
+                var humidPercent = value.humidity * 100;
+                var humidPercentFixed = Math.trunc(humidPercent);
+
+                var temperature = value.temperature
+                var temperatureFixed = Math.trunc(temperature);
+
+                var windSpeed = value.windSpeed;
+                var windSpeedFixed = Math.trunc(windSpeed);
+
 
                 // limit hourly times displayed to 10 to not show to much information on screen
                 if(key == 10){
@@ -79,10 +89,10 @@ function createExtended(latitude, longitude, cityName, divID){
                                 "<tr>" +
                                     "<td>" + formattedTime + "</td>" +  
                                     "<td>" + value.summary + "</td>" +
-                                    "<td>" + value.temperature + "&#8457" + "</td>" +
+                                    "<td>" + temperatureFixed + "&#8457" + "</td>" +
                                     "<td>" + precipFixed + "%" + "</td>" + 
                                     "<td>" + humidPercentFixed + "%" + "</td>" +
-                                    "<td>" + value.windSpeed + " mph" + "</td>"
+                                    "<td>" + windSpeedFixed + " mph" + "</td>"
                                 "</tr>";
                                      
             }      
@@ -122,23 +132,33 @@ function createExtended(latitude, longitude, cityName, divID){
                 
                 //convert precipitation to a percentage instead of a decimal
                 var precipPercent = value.precipProbability * 100;
-                // prevent value from creating a run on number by fixing to number to one decimal point
-                var precipFixed = precipPercent.toFixed(1);
+                // prevent value from creating a run on number trunc'ing the decimal point 
+                var precipFixed = Math.trunc(precipPercent);
 
-                //convert humidity to a percentage instead of a decimal also convert to string so that 
-                // substring can run on the results to shorten the result to prevent a runon percentage
-                var humidPercent = (value.humidity * 100).toString();
-                var humidPercentFixed = humidPercent.substring(0,5);
+                //convert humidity to a percentage instead of a decimal             
+                // also prevent some other variables from producing decimals by trunc'ing the decimals
+                var humidPercent = value.humidity * 100
+                var humidPercentFixed = Math.trunc(humidPercent);
+
+                var minTemp = value.temperatureMin;
+                var minTempFixed = Math.trunc(minTemp);
+
+                var maxTemp = value.temperatureMax;
+                var maxTempFixed = Math.trunc(maxTemp);
+
+                var windSpeed = value.windSpeed;
+                var windSpeedFixed = Math.trunc(windSpeed);
+                
                 
                 // Format string that will be displayed on page as a html table
                 dailyString +="<tbody>" +
                                 "<tr>" +
                                     "<td>" + formattedDate + "</td>" +  
                                     "<td style='max-width:200px;'>" + value.summary + "</td>" +
-                                    "<td>" + value.temperatureMin + "&#8457" + " / " + value.temperatureMax + "&#8457" + "</td>" +
+                                    "<td>" + minTempFixed + "&#8457" + " / " + maxTempFixed + "&#8457" + "</td>" +
                                     "<td>" + precipFixed + "%" + "</td>" + 
                                     "<td>" + humidPercentFixed + "%" + "</td>" +
-                                    "<td>" + value.windSpeed + " mph" + "</td>"
+                                    "<td>" + windSpeedFixed+ " mph" + "</td>"
                                 "</tr>";
                                    
             });
