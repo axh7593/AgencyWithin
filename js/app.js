@@ -1,3 +1,5 @@
+
+
 var api_key = "b02c829edbd50b430f4f974e9d24bb32";
 var api_url = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/";
 
@@ -111,7 +113,7 @@ function createExtended(latitude, longitude, cityName, divID){
             "<tr>" +
                 "<th>" + "Date" + "</th>" +
                 "<th>" + "Description" + "</th>"+
-                "<th>" + "High/Low" + "</th>" +
+                "<th>" + "Low/High" + "</th>" +
                 "<th>" + "Precip" + "</th>" +
                 "<th>" + "Humidity" + "</th>" +
                 "<th>" + "Wind" + "</th>" +
