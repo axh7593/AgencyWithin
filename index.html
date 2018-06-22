@@ -28,7 +28,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Anthony Huff: Agency Within Developer Test</a>
+        <a class="navbar-brand js-scroll-trigger" href="index.html"><img src="img/logo.png" /></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -174,20 +174,32 @@
         <div class="row">
           <div class="col-lg-8 mx-auto">
             <h2>About this Project</h2>
-            <p class="lead">I began the project by finding a good bootstrap template to showcase the project on. I wanted something that was 
-              not to much but still looked good in terms of design and ux/ui. I believe that using bootstrap for this project was a good idea because
-              that way I could focus more on implementation of features and have more time to find and understand an API. <br><br>
-              Speaking of the API, I began by trying to use the one suggested in the project documentation, openweathermap.org but found myself not liking it,
-              so I began in search of another API that would show weather and I landed upon using https://darksky.net/ which is another widely used weather API.<br><br>
-              I began to look at documentation and online resources on how to use the API and how to begin implementation. I began coding and after a couple hours
-              relized that I would need to streamline the process of making the API calls as dark sky requires for each call a set of latitude and longitude coords everytime
-              a call is sent. So I created a function with several paramters (createCall) that would be used in my main HTML file to pass in the required info that I needed (this can be found in js/app.js)<br><br>
-              For the extended forecasts for each city I began by creating another JavaScript function for displaying the extended forecast for the cities by displaying hourly and daily
-              data for the city clicked. For the design of these I knew I had to figure out how to nicely display the data as there would be a lot of data coming in. I landed upon HTML tables as they
-              are simple and get the data seperated into a nice format that is clearly readable. <br><br>
-              One thing that I tried to do but had trouble implementing was using JQuery to dynamically display the extended forecast by using the JQuery function replaceWith() and 
-              replacing the div containing the cities and display the selected city's extended forecast, but ultimately decided to implement a back button and use multiple pages to display the extended
-              forecast. 
+            <p class="lead">Finding an appropriate bootstrap template was a good starting point for me. This would allow me to focus primarily on the 
+              implementation of features and offer me more time to find a fitting API. I wanted a template that didn’t go overboard on the design aspects 
+              and would show the information first and foremost. <br><br>
+
+              Speaking of the API, I began by looking over how to use the one suggested in the project documentation, openweathermap.org, but found myself 
+              not liking it, so I began in search of another API and I landed upon using https://darksky.net/ which is another widely used weather API. <br><br>
+              
+              I began to look at the documentation and online resources on how to use dark sky and how to begin implementation. I began coding and after a couple 
+              hours realized that I would need to streamline the process of making the API calls as dark sky requires, for each call a set of latitude and longitude 
+              coordinates corresponding to the city you want shown. So, I created a function with several parameters named “createCall” that would be used in my main 
+              HTML file to pass in the required info that I wanted displayed. (this can be found in js/app.js) <br><br>
+              
+              For the extended forecasts section that was to be created, I put together another JavaScript function for displaying the extended forecast for the cities 
+              by displaying hourly and daily data for the city selected. For the design of these I knew I had to figure out a way to nicely display the data as there would 
+              be a lot of data coming in and I would need to parse through it. My solution for this was to place the information into HTML tables, giving them a simple readable 
+              format. But I also wanted to not make it look like a basic HTML table as I’ve taken design classes in college and have learned about the importance of design so I 
+              designed it to look aesthetically pleasing to the eye as well as providing readable data. <br><br>
+              
+              Some problems I ran into revolved around JQuery. To dynamically show the extended forecast, I used the JQuery function replaceWith() and replacing the div 
+              containing the cities and display the selected city's extended forecast, but ultimately decided to implement a back button and use multiple pages to display 
+              the extended forecast. Another issue that presented itself was the fact that the API presented dates/times as a Unix timestamp and not a standard date/time number. 
+              I’ve never run into Unix time stamps before so I had to find a way to convert to a readable time. After some research, I was able to find some references on how to 
+              convert the Unix time into a 24-hour format to have it at least somewhat readable to the end user.
+              
+              
+               
               
             </p>
           </div>

@@ -22,7 +22,6 @@ function createCall(latitude, longitude, cityName, divID){
 
 
 function createExtended(latitude, longitude, cityName, divID){
-    //console.log("exteded lat: " + latitude);
     var api_call = api_url + api_key + "/" + latitude + "," + longitude;
     this.latitude = latitude;
     this.longitude = longitude;
@@ -36,7 +35,7 @@ function createExtended(latitude, longitude, cityName, divID){
     var string = "";
     string += "<h1 style='width: 400px;'>" + city + "</h1>" + "<br>";
     string += "<h4 style='width: 400px;'>" + "Hourly Forecast" + "</h4>";
-    string += "<table style='width: 800px !important;'>" +
+    string += "<table style='width: 900px !important;'>" +
                 "<thead>" +
                     "<tr>" +
                         "<th>" + "Time" + "</th>" +
@@ -57,6 +56,7 @@ function createExtended(latitude, longitude, cityName, divID){
                 var date = new Date(value.time * 1000);
                 var hours = date.getHours();
                 var minutes = "0" + date.getMinutes();
+                
                 var formattedTime = hours + ":" + minutes.substr(-2);
                 
                 //convert precipitation to a percentage instead of a decimal
@@ -111,7 +111,6 @@ function createExtended(latitude, longitude, cityName, divID){
 
             //loop through all the daily data
             $.each(forecast.daily.data, function(key, value){
-                //console.log(value);
                 
                 // convert UNIX time to standard date stamps
                 var date = new Date(value.time * 1000);
