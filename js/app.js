@@ -12,10 +12,10 @@ function createCall(latitude, longitude, cityName, divID){
     $.getJSON(api_call, function(forecast) {
         var string = "";
         var city = cityName;
-        // make temp a string 
-        var currentTemp = (forecast.currently.temperature).toString();
-        // make temp only show the first two numbers as to cut off the decimal as its not needed.
-        var currentTempFixed = currentTemp.substr(0,2);
+        // Get current temp
+        var currentTemp = forecast.currently.temperature;
+        // make temp only show the non decimal number for temp by trunc'ing the number 
+        var currentTempFixed = Math.trunc(currentTemp);
         var summary = forecast.currently.summary;
         string = city + "<br>" +
             "<strong>Current Temperature</strong>: " + currentTempFixed + "&#8457" + "<br>" + 

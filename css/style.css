@@ -1,4 +1,4 @@
-/* overlay code is referenced from https://codepen.io/anon/pen/ZRraEG?editors=1100 for showing overlay over image link*/
+/* overlay code is referenced from https://codepen.io/anon/pen/ZRraEG?editors=1100 for showing overlay over image links*/
 
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 
@@ -130,6 +130,29 @@ caption {
   max-height: 40px;
   max-width: 40px;
 }
+.Buf.data{
+  font-size: 14pt;
+}
+.LA.data{
+  font-size: 14pt;
+}
+.nyc.data{
+  font-size: 14pt;
+}
+.chicago.data{
+  font-size: 14pt;
+}
+.seattle.data{
+  font-size: 14pt;
+}
+#project{
+  padding-top: 75px;
+  padding-bottom: 20px;
+}
+.table-row{
+  margin-right: 600px; 
+}
+
 /* back button styling */
 #back{
     margin-top: 10px;
@@ -140,13 +163,7 @@ caption {
     -webkit-border-radius: 5px;
     border-radius: 5px; 
 }
-#project{
-  padding-top: 75px;
-  padding-bottom: 20px;
-}
-.table-row{
-  margin-right: 600px; 
-}
+
 /* table styling */
 tr{
   text-align: center;
@@ -170,4 +187,5 @@ a[href="https://darksky.net/forecast/42.8864,-78.8784/us12/en"]{
   pointer-events: none;
   cursor: default;
 }
+
 

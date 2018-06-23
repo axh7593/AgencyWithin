@@ -17,7 +17,7 @@
     <link href="css/scrolling-nav.css" rel="stylesheet">
 
     <!-- my css file-->
-    
+    <link href="css/style.css" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/app.js"></script>
@@ -74,7 +74,6 @@
                       </div>
                     </a>    
               </div>
-              <script type='text/javascript' src='https://darksky.net/widget/default-small/42.88644679999999,-78.8783689/us12/en.js?width=100%&height=70&title=Full Forecast&textColor=333333&bgColor=transparent&transparency=true&skyColor=333333&fontFamily=Sans-Serif&customFont=&units=us'></script>
               <!-- div with the id for the parameter that was passed in to find and replace the inner html-->
               <p class="Buf data"></p>
               
@@ -199,7 +198,17 @@
               containing the cities and display the selected city's extended forecast, but ultimately decided to implement a back button and use multiple pages to display 
               the extended forecast. Another issue that presented itself was the fact that the API presented dates/times as a Unix timestamp and not a standard date/time number. 
               I’ve never run into Unix time stamps before so I had to find a way to convert to a readable time. After some research, I was able to find some references on how to 
-              convert the Unix time into a 24-hour format to have it at least somewhat readable to the end user.
+              convert the Unix time into a 24-hour format to have it at least somewhat readable to the end user. I also attempted to implement some icons that would go along with 
+              the current conditions to illustrate more but unfortunately the API does not come with imbeded icons that correspond with the weather conditions given. After trying for 
+              some time to implement some recommended icons I ultimately left them out. I then found that Dark Sky provides widgets that show the current temperature with a animated icon. In 
+              the end I did not include this either as it lead to another page that was not one I created and I fealt as if that would not be good to include in this dev test that is supposed to show
+              my abilitity to implement items. <br><br>
+
+              In conclusion I found this project good to do as it further increased my skills in using an API and parsing the data into a readable format for a end user, and had me solve many issues 
+              along the way that had me think about what to do next. Some things I would have done differently is find some way of using JQuery to dynamically show data without having to go
+              to another page or reload the page. Also would have started with php files as to be able to do include files for all the redundant HTML lines that exist between all of my pages. <br><br>
+              
+              <strong> Thank you for giving me this opportunity to showcase my skills! </strong>
               
               
                
@@ -229,5 +238,5 @@
     <script src="js/scrolling-nav.js"></script>
 
   </body>
-  <link href="css/style.css" rel="stylesheet">
+  
 </html>
