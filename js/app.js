@@ -1,13 +1,13 @@
 
 var api_key = "b02c829edbd50b430f4f974e9d24bb32";
-var api_url = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/";
+var api_url = "https://api.darksky.net/forecast/";
 
 function createCall(latitude, longitude, cityName, divID){
     this.latitude = latitude;
     this.longitude = longitude;
     this.cityName = cityName;
     this.divID = divID;
-    var api_call = api_url + api_key + "/" + latitude + "," + longitude;
+    var api_call = api_url + api_key + "/" + latitude + "," + longitude + "?callback=?" ;
 
     $.getJSON(api_call, function(forecast) {
         var string = "";
@@ -26,7 +26,7 @@ function createCall(latitude, longitude, cityName, divID){
 
 
 function createExtended(latitude, longitude, cityName, divID){
-    var api_call = api_url + api_key + "/" + latitude + "," + longitude;
+    var api_call = api_url + api_key + "/" + latitude + "," + longitude + "?callback=?";
     this.latitude = latitude;
     this.longitude = longitude;
     this.cityName = cityName;
